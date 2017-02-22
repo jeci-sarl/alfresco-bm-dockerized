@@ -1,0 +1,13 @@
+export NEXUS=https://artifacts.alfresco.com/nexus/content/groups/public-snapshots
+
+
+export ARTIFACTS="\
+alfresco-benchmark-tests-cmis:1.7-SNAPSHOT \
+alfresco-benchmark-tests-dataload:2.8-SNAPSHOT \
+alfresco-benchmark-tests-desktop-sync:1.3-SNAPSHOT \
+alfresco-benchmark-tests-device-sync:1.0-SNAPSHOT \
+alfresco-benchmark-tests-ent-signup:2.5-SNAPSHOT \
+alfresco-benchmark-tests-publicapi:2.3-SNAPSHOT \
+alfresco-benchmark-tests-share:5.2.0-SNAPSHOT \
+alfresco-benchmark-tests-workflow:1.3-SNAPSHOT \
+"

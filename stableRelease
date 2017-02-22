@@ -1,0 +1,13 @@
+export NEXUS=https://artifacts.alfresco.com/nexus/content/repositories/public
+
+export ARTIFACTS="\
+alfresco-benchmark-server:2.1.4 \
+alfresco-benchmark-sample:2.1.4 \
+alfresco-benchmark-tests-cmis:1.6 \
+alfresco-benchmark-tests-dataload:2.7 \
+alfresco-benchmark-tests-ent-signup:2.4 \
+alfresco-benchmark-tests-publicapi:2.2 \
+alfresco-benchmark-tests-share:5.0.1 \
+alfresco-benchmark-tests-track-document-creation:1.2 \
+alfresco-benchmark-tests-workflow:1.2 \
+"
