@@ -6,15 +6,17 @@ function build {
   warfile=$1
   imagename=$2
   tagname=$3
-  echo "## Building jeci/$imagename:$tagname  ##"
-  echo $warfile
 
   cat > .dockerignore<<EOF
 *.war
 !$warfile
 EOF
 
+  echo "## Building jeci/$imagename:$tagname  ##"
   docker build -t jeci/$imagename:$tagname --build-arg WAR_FILE=$warfile .
+
+
+  echo "## Pushing jeci/$imagename:$tagname  ##"
   docker push jeci/$imagename:$tagname;
   rm .dockerignore
 }
