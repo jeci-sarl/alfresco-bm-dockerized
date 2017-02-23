@@ -8,6 +8,7 @@ ARG APP_NAME
 COPY server.xml /usr/local/tomcat/conf/server.xml
 COPY tomcat-users.xml /usr/local/tomcat/conf/tomcat-users.xml
 
+ENV CATALINA_OPTS="-Djava.security.egd=file:/dev/./urandom -Djava.awt.headless=true -Dfile.encoding=UTF-8 "
 
 COPY $WAR_FILE /usr/local/tomcat/webapps/
 
