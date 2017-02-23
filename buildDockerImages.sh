@@ -5,7 +5,8 @@
 function build {
   warfile=$1
   imagename=$2
-  tagname=$3
+  tagname=`tagname $war`
+  appname=`appname $war`
 
   cat > .dockerignore<<EOF
 *.war
@@ -13,11 +14,12 @@ function build {
 EOF
 
   echo "## Building jeci/$imagename:$tagname  ##"
-  docker build -t jeci/$imagename:$tagname --build-arg WAR_FILE=$warfile .
+  sudo docker build -t jeci/$imagename:$tagname \
+    --build-arg WAR_FILE=$warfile --build-arg APP_NAME=$appname .
 
 
   echo "## Pushing jeci/$imagename:$tagname  ##"
-  docker push jeci/$imagename:$tagname;
+  #docker push jeci/$imagename:$tagname;
   rm .dockerignore
 }
 
@@ -27,17 +29,22 @@ function tagname {
   echo $R
 }
 
+function appname {
+  R="$(basename $1 .war)"
+  echo $R | grep -oE '[a-z-]+[a-z]'
+}
+
 for war in $(ls alfresco-benchmark-server-*.war)
 do
-  build $war "alfresco-bm-server" `tagname $war`
+  build $war "alfresco-bm-server"
 done
 
 for war in $(ls alfresco-benchmark-sample-*.war)
 do
-  build $war "alfresco-bm-test" `tagname $war`
+  build $war "alfresco-bm-test"
 done
 
 for war in $(ls alfresco-benchmark-tests*war)
 do
-  build $war "alfresco-bm-test" `tagname $war`
+  build $war "alfresco-bm-test"
 done
