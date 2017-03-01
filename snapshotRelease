@@ -2,6 +2,7 @@ export NEXUS=https://artifacts.alfresco.com/nexus/content/groups/public-snapshot
 
 
 export ARTIFACTS="\
+alfresco-benchmark-server:2.2.0-SNAPSHOT \
 alfresco-benchmark-tests-cmis:1.7-SNAPSHOT \
 alfresco-benchmark-tests-dataload:2.8-SNAPSHOT \
 alfresco-benchmark-tests-desktop-sync:1.3-SNAPSHOT \
