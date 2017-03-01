@@ -1,8 +1,7 @@
 #!/bin/bash
 # Download and build all
 
-source buildDockerImages.sh
 source stableRelease
-./downloadWars.sh
+./buildDockerImages.sh
 source snapshotRelease
-./downloadWars.sh
+./buildDockerImages.sh
