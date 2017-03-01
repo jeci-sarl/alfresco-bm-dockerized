@@ -33,18 +33,3 @@ function appname {
   R="$(basename $1 .war)"
   echo $R | grep -oE '[a-z-]+[a-z]'
 }
-
-for war in $(ls alfresco-benchmark-server-*.war)
-do
-  build $war "alfresco-bm-server"
-done
-
-for war in $(ls alfresco-benchmark-sample-*.war)
-do
-  build $war "alfresco-bm-test"
-done
-
-for war in $(ls alfresco-benchmark-tests*war)
-do
-  build $war "alfresco-bm-test"
-done
