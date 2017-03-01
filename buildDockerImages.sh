@@ -17,9 +17,8 @@ EOF
   sudo docker build -t jeci/$imagename:$tagname \
     --build-arg WAR_FILE=$warfile --build-arg APP_NAME=$appname .
 
-
   echo "## Pushing jeci/$imagename:$tagname  ##"
-  #docker push jeci/$imagename:$tagname;
+  sudo docker push jeci/$imagename:$tagname;
   rm .dockerignore
 }
 
